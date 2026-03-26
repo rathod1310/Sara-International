@@ -1,0 +1,904 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- ===== 1. HERO BANNER ===== -->
+<section id="home" class="hero-section">
+  <div class="hero-slides" id="heroSlides">
+    <div class="hero-slide active" style="background-image: url('/static/img/banner1.png')"></div>
+    <div class="hero-slide" style="background-image: url('/static/img/banner2.png')"></div>
+    <div class="hero-slide" style="background-image: url('/static/img/banner4.png')"></div>
+    <!-- <div class="hero-slide" style="background-image: url('/static/img/service-4.jpg')"></div> -->
+  </div>
+  <div class="hero-grad-overlay"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-particles" id="particles"></div>
+  <div class="container position-relative z-2">
+    <div class="row align-items-center min-vh-hero">
+      <div class="col-lg-7">
+        <h1 class="hero-title">Greetings <span class="text-accent">From </span><br/>SARA <span class="text-accent">INTERNATIONAL</span></h1>
+        <p class="hero-desc">Discover All Of Your Culinary Needs Right Here. We Offer You Solutions For All Your Needs, From Traditional Food To Western Food.</p>
+        <div class="d-flex flex-wrap gap-3 hero-actions">
+          <a href="{% url 'ready_to_eat' %}" class="btn btn-primary-main">Explore Products <i class="fa fa-arrow-right ms-2"></i></a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item"><span class="stat-num">500+</span><span class="stat-label">Products</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><span class="stat-num">80+</span><span class="stat-label">Countries</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><span class="stat-num">15+</span><span class="stat-label">Years Experience</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><span class="stat-num">2000+</span><span class="stat-label">Clients</span></div>
+        </div>
+      </div>
+      <div class="col-lg-5 d-none d-lg-flex justify-content-center">
+        <div class="hero-ship-visual">
+          <div class="ship-glow"></div>
+          <i class="fa fa-ship hero-ship-icon"></i>
+          <div class="orbit-ring ring1"><span class="orbit-dot"><i class="fa fa-seedling"></i></span></div>
+          <div class="orbit-ring ring2"><span class="orbit-dot"><i class="fa fa-tshirt"></i></span></div>
+          <div class="orbit-ring ring3"><span class="orbit-dot"><i class="fa fa-gem"></i></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button class="hero-arrow hero-arrow-prev" id="heroPrev"><i class="fa fa-chevron-left"></i></button>
+  <button class="hero-arrow hero-arrow-next" id="heroNext"><i class="fa fa-chevron-right"></i></button>
+  <div class="hero-dots" id="heroDots">
+    <span class="hero-dot active" data-index="0"></span>
+    <span class="hero-dot" data-index="1"></span>
+    <span class="hero-dot" data-index="2"></span>
+    <!-- <span class="hero-dot" data-index="3"></span> -->
+  </div>
+  <div class="hero-progress"><div class="hero-progress-bar" id="heroProgressBar"></div></div>
+  <div class="hero-scroll-hint"><i class="fa fa-chevron-down"></i></div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-strip">
+  <div class="marquee-track">
+    <span><i class="fa fa-seedling"></i> Ready to Eat Products</span>
+    <span><i class="fa fa-pepper-hot"></i> Whole Spices</span>
+    <span><i class="fa fa-mortar-pestle"></i> Ground Spices</span>
+    <span><i class="fa fa-wheat-awn"></i> Flour &amp; Millets</span>
+    <span><i class="fa fa-seedling"></i> Beans &amp; Pulses</span>
+    <span><i class="fa fa-star"></i> Our Speciality</span>
+    <span><i class="fa fa-jar"></i> Pickles &amp; Chutney</span>
+    <span><i class="fa fa-blender"></i> Ready Paste</span>
+    <span><i class="fa fa-cookie"></i> Papad &amp; Khakhra</span>
+    <span><i class="fa fa-apple-whole"></i> Dry Fruits</span>
+    <span><i class="fa fa-cookie-bite"></i> Cookies</span>
+    <span><i class="fa fa-fire"></i> Agarbatti</span>
+    <span><i class="fa fa-seedling"></i> Ready to Eat Products</span>
+    <span><i class="fa fa-pepper-hot"></i> Whole Spices</span>
+    <span><i class="fa fa-mortar-pestle"></i> Ground Spices</span>
+    <span><i class="fa fa-wheat-awn"></i> Flour &amp; Millets</span>
+    <span><i class="fa fa-seedling"></i> Beans &amp; Pulses</span>
+    <span><i class="fa fa-star"></i> Our Speciality</span>
+    <span><i class="fa fa-jar"></i> Pickles &amp; Chutney</span>
+    <span><i class="fa fa-blender"></i> Ready Paste</span>
+  </div>
+</div>
+
+<!-- ===== 2. WHO WE ARE — WHITE BG ===== -->
+<section id="about" class="hs hs-white" style="padding-bottom: 40px;">
+  <div class="container">
+    <div class="row g-0 align-items-stretch">
+
+      <div class="col-lg-6 hs-text-side">
+        <div class="hs-text-inner">
+          <div class="hs-eyebrow">Who We Are</div>
+          <h2 class="hs-title">India's Trusted <span>Food Export</span> Partner</h2>
+          <p class="hs-desc">We SARA INTERNATIONAL engaged in the business of processing, supplying &amp; exporting of <strong>FOOD, SPICES, PULSES and GENERAL PROVISIONS, FMCG and GROCERY products</strong> which includes Rice, Wheat, Wheat Flour, Noodles, Kurkure, Namkeen, All types of Pooja material, Agarbatti, and Many more range of Indian products.</p>
+          <div class="hs-features">
+            <div class="hs-feat"><i class="fa fa-check-circle"></i><span>ISO Certified Manufacturing</span></div>
+            <div class="hs-feat"><i class="fa fa-check-circle"></i><span>FSSAI &amp; APEDA Registered</span></div>
+            <div class="hs-feat"><i class="fa fa-check-circle"></i><span>Export to 80+ Countries</span></div>
+            <div class="hs-feat"><i class="fa fa-check-circle"></i><span>15+ Years of Excellence</span></div>
+          </div>
+          <a href="{% url 'about' %}" class="hs-btn">Learn More About Us <i class="fa fa-arrow-right ms-2"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-6 hs-img-side">
+        <div class="hs-img-wrap">
+          <img src="/static/img/about-img.jpg" alt="About Sara International" onerror="this.src='/static/img/banner3.png'"/>
+          <div class="hs-badge">
+            <span class="hs-badge-num">15+</span>
+            <span class="hs-badge-txt">Years of Excellence</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3. OUR PRODUCT RANGE — DARK IMAGE BG ===== -->
+<section class="hs hs-dark" style="background-image:url('/static/img/carousel-1.jpg');">
+  <div class="hs-dark-overlay"></div>
+  <div class="container position-relative" style="z-index:2; padding-top:80px; padding-bottom:80px;">
+    <div class="text-center mb-5">
+      <div class="hs-eyebrow" style="color:var(--orange-lt);background:rgba(232,132,26,0.15);border-color:rgba(232,132,26,0.3);">What We Export</div>
+      <h2 class="hs-title text-white">Our Product <span>Range</span></h2>
+      <p style="color:rgba(255,255,255,0.65);font-size:0.97rem;max-width:560px;margin:0 auto 0;">Premium quality Indian food products exported to 80+ countries worldwide</p>
+    </div>
+    <div class="row g-4">
+
+      <!-- <div class="col-lg-3 col-md-4 col-6">
+        <a href="{% url 'ready_to_eat' %}" class="pcc-card">
+          <div class="pcc-img-wrap">
+            <img src="/static/img/01.jpg" alt="Ready to Eat" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="pcc-fallback"><i class="fa fa-utensils"></i></div>
+            <div class="pcc-overlay"></div>
+          </div>
+          <div class="pcc-label">Ready to Eat Products</div>
+        </a>
+      </div> -->
+
+      <!-- 16 Product Categories -->
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="{% url 'ready_to_eat' %}" class="pcc-card">
+          <div class="pcc-img-wrap">
+            <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=800&q=80" alt="Ready to Eat" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="pcc-fallback"><i class="fa fa-utensils"></i></div>
+            <div class="pcc-overlay"></div>
+          </div>
+          <div class="pcc-label">Ready to Eat</div>
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="{% url 'whole_spices' %}" class="pcc-card">
+          <div class="pcc-img-wrap">
+            <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&q=80" alt="Whole Spices" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="pcc-fallback"><i class="fa fa-pepper-hot"></i></div>
+            <div class="pcc-overlay"></div>
+          </div>
+          <div class="pcc-label">Whole Spices</div>
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="{% url 'ground_spices' %}" class="pcc-card">
+          <div class="pcc-img-wrap">
+            <img src="/static/img/Ground Spices.png" alt="Ground Spices" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="pcc-fallback"><i class="fa fa-mortar-pestle"></i></div>
+            <div class="pcc-overlay"></div>
+          </div>
+          <div class="pcc-label">Ground Spices</div>
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="{% url 'flour_and_millets' %}" class="pcc-card">
+          <div class="pcc-img-wrap">
+            <img src="/static/img/Flour & Millets.png" alt="Flour &amp; Millets" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="pcc-fallback"><i class="fa fa-wheat-awn"></i></div>
+            <div class="pcc-overlay"></div>
+          </div>
+          <div class="pcc-label">Flour &amp; Millets</div>
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="{% url 'beans_pulses_lentils' %}" class="pcc-card">
+          <div class="pcc-img-wrap">
+            <img src="/static/img/Premium Beans, Pulses & Lentils.png" alt="Beans, Pulses &amp; Lentils" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="pcc-fallback"><i class="fa fa-seedling"></i></div>
+            <div class="pcc-overlay"></div>
+          </div>
+          <div class="pcc-label">Beans, Pulses &amp; Lentils</div>
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="{% url 'our_speciality' %}" class="pcc-card">
+          <div class="pcc-img-wrap">
+            <img src="/static/img/Sweet Chikki.jpg" alt="Our Speciality" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="pcc-fallback"><i class="fa fa-star"></i></div>
+            <div class="pcc-overlay"></div>
+          </div>
+          <div class="pcc-label">Our Speciality</div>
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="{% url 'pickles_chutney' %}" class="pcc-card">
+          <div class="pcc-img-wrap">
+            <img src="/static/img/Pickles.jpg" alt="Pickles &amp; Chutney" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="pcc-fallback"><i class="fa fa-jar"></i></div>
+            <div class="pcc-overlay"></div>
+          </div>
+          <div class="pcc-label">Pickles &amp; Chutney</div>
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="{% url 'ready_paste' %}" class="pcc-card">
+          <div class="pcc-img-wrap">
+            <img src="/static/img/Garlic Paste.jpg" alt="Ready Paste" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="pcc-fallback"><i class="fa fa-blender"></i></div>
+            <div class="pcc-overlay"></div>
+          </div>
+          <div class="pcc-label">Ready Paste</div>
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="{% url 'papad_khakhra' %}" class="pcc-card">
+          <div class="pcc-img-wrap">
+            <img src="/static/img/Papad.jpg" alt="Papad &amp; Khakhra" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="pcc-fallback"><i class="fa fa-cookie"></i></div>
+            <div class="pcc-overlay"></div>
+          </div>
+          <div class="pcc-label">Papad &amp; Khakhra</div>
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="{% url 'dry_fruits' %}" class="pcc-card">
+          <div class="pcc-img-wrap">
+            <img src="/static/img/Dried Fruits.jpg" alt="Dry Fruits" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="pcc-fallback"><i class="fa fa-apple-whole"></i></div>
+            <div class="pcc-overlay"></div>
+          </div>
+          <div class="pcc-label">Dry Fruits</div>
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="{% url 'cookies' %}" class="pcc-card">
+          <div class="pcc-img-wrap">
+            <img src="/static/img/Premium Handcrafted Cookies.jpg" alt="Cookies" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="pcc-fallback"><i class="fa fa-cookie-bite"></i></div>
+            <div class="pcc-overlay"></div>
+          </div>
+          <div class="pcc-label">Cookies</div>
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="{% url 'pooja_samagri' %}" class="pcc-card">
+          <div class="pcc-img-wrap">
+            <img src="/static/img/Pooja Kits.jpg" alt="Pooja Samagri" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="pcc-fallback"><i class="fa fa-fire"></i></div>
+            <div class="pcc-overlay"></div>
+          </div>
+          <div class="pcc-label">Pooja Samagri</div>
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="{% url 'agarbatti' %}" class="pcc-card">
+          <div class="pcc-img-wrap">
+            <img src="/static/img/agarbatti.png" alt="Agarbatti" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="pcc-fallback"><i class="fa fa-wind"></i></div>
+            <div class="pcc-overlay"></div>
+          </div>
+          <div class="pcc-label">Agarbatti</div>
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="{% url 'dhoop_stick' %}" class="pcc-card">
+          <div class="pcc-img-wrap">
+            <img src="/static/img/dhoop-stick.png" alt="Dhoop Stick" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="pcc-fallback"><i class="fa fa-spa"></i></div>
+            <div class="pcc-overlay"></div>
+          </div>
+          <div class="pcc-label">Dhoop Stick</div>
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="{% url 'makhana_chana_peanuts' %}" class="pcc-card">
+          <div class="pcc-img-wrap">
+            <img src="/static/img/chana1.png" alt="Makhana, Chana &amp; Peanuts" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="pcc-fallback"><i class="fa fa-bowl-rice"></i></div>
+            <div class="pcc-overlay"></div>
+          </div>
+          <div class="pcc-label">Makhana, Chana &amp; Peanuts</div>
+        </a>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-6">
+        <a href="{% url 'mukhavas' %}" class="pcc-card">
+          <div class="pcc-img-wrap">
+            <img src="/static/img/mukhavas.png" alt="Mukhavas" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="pcc-fallback"><i class="fa fa-leaf"></i></div>
+            <div class="pcc-overlay"></div>
+          </div>
+          <div class="pcc-label">Mukhavas</div>
+        </a>
+      </div>
+
+    </div>
+    <div class="text-center mt-5">
+      <a href="{% url 'ready_to_eat' %}" class="btn btn-primary-main px-5">View All Products <i class="fa fa-arrow-right ms-2"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 4. OUR CERTIFICATIONS — WHITE BG ===== -->
+<section class="hs hs-white" id="certifications" style="padding-top:80px; padding-bottom:80px;">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="hs-eyebrow">Certified &amp; Trusted</div>
+      <h2 class="hs-title">Our <span>Certifications</span></h2>
+      <p class="hs-desc" style="max-width:520px;margin:0 auto;">Internationally recognised certifications ensuring the highest quality standards for every shipment we make.</p>
+    </div>
+    <div class="cert-slider-wrapper">
+      <div class="cert-track" id="certTrack">
+        <div class="cert-card"><img src="/static/img/certificates/c1.png" alt="Cert 1"></div>
+        <div class="cert-card"><img src="/static/img/certificates/c2.png" alt="Cert 2"></div>
+        <div class="cert-card"><img src="/static/img/certificates/c3.png" alt="Cert 3"></div>
+        <div class="cert-card"><img src="/static/img/certificates/c4.png" alt="Cert 4"></div>
+        <div class="cert-card"><img src="/static/img/certificates/c5.png" alt="Cert 5"></div>
+        <div class="cert-card"><img src="/static/img/certificates/c6.png" alt="Cert 6"></div>
+        <div class="cert-card"><img src="/static/img/certificates/c7.png" alt="Cert 7"></div>
+        <div class="cert-card"><img src="/static/img/certificates/c8.png" alt="Cert 8"></div>
+        <div class="cert-card"><img src="/static/img/certificates/c9.png" alt="Cert 9"></div>
+        <div class="cert-card"><img src="/static/img/certificates/c10.png" alt="Cert 10"></div>
+        <div class="cert-card"><img src="/static/img/certificates/c11.png" alt="Cert 11"></div>
+        <div class="cert-card"><img src="/static/img/certificates/c12.png" alt="Cert 12"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 5. WHY CHOOSE US — DARK IMAGE BG ===== -->
+<section class="hs hs-dark d-flex align-items-center" id="why" style="background-image:url('/static/img/carousel-1.jpg');min-height:60vh;padding:40px 0;">
+  <div class="hs-dark-overlay"></div>
+  <div class="container position-relative" style="z-index:2;">
+    <div class="row g-4 align-items-center">
+      
+      <!-- Left side - Title and description -->
+      <div class="col-lg-5">
+        <div class="hs-eyebrow" style="color:var(--orange-lt);background:rgba(232,132,26,0.15);border-color:rgba(232,132,26,0.3);">Why Choose Us</div>
+        <h2 class="hs-title text-white">The Sara <span>Advantage</span></h2>
+        <p class="hs-desc" style="color:rgba(255,255,255,0.75);">We don't just export products — we build long-term partnerships. Our dedicated team ensures seamless documentation, on-time delivery, and premium quality in every shipment.</p>
+      </div>
+      
+      <!-- Right side - 4 items in 2x2 grid -->
+      <div class="col-lg-7">
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="hs-wl-item" style="margin-bottom:0;">
+              <div class="hs-wl-icon"><i class="fa fa-shield-halved"></i></div>
+              <div><strong>Quality Assurance</strong><p style="margin-bottom:0;color:rgba(255,255,255,0.7);">Every batch tested and certified before shipment</p></div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="hs-wl-item" style="margin-bottom:0;">
+              <div class="hs-wl-icon"><i class="fa fa-file-invoice"></i></div>
+              <div><strong>Full Documentation</strong><p style="margin-bottom:0;color:rgba(255,255,255,0.7);">Complete export documentation handled by our team</p></div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="hs-wl-item" style="margin-bottom:0;">
+              <div class="hs-wl-icon"><i class="fa fa-truck-fast"></i></div>
+              <div><strong>On-Time Delivery</strong><p style="margin-bottom:0;color:rgba(255,255,255,0.7);">Reliable logistics network worldwide</p></div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="hs-wl-item" style="margin-bottom:0;">
+              <div class="hs-wl-icon"><i class="fa fa-headset"></i></div>
+              <div><strong>24/7 Support</strong><p style="margin-bottom:0;color:rgba(255,255,255,0.7);">Dedicated account managers for every client</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<!-- ===== 6. TRUSTED NAMES — WHITE BG ===== -->
+<section class="hs hs-white" id="brands" style="padding-top:80px; padding-bottom:80px;">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="hs-eyebrow">Trusted Names</div>
+      <h2 class="hs-title">Brands We <span>Export</span></h2>
+      <p class="hs-desc" style="max-width:520px;margin:0 auto;">We are authorised exporters for leading Indian FMCG brands trusted by consumers in 80+ countries.</p>
+    </div>
+    
+    <!-- Brand Carousel Slider -->
+    <div class="brand-carousel-wrapper">
+      <button class="brand-carousel-btn brand-prev" id="brandPrev"><i class="fa fa-chevron-left"></i></button>
+      
+      <div class="brand-carousel-container">
+        <div class="brand-carousel-track" id="brandCarouselTrack">
+          <div class="brand-carousel-slide">
+            <div class="brand-logo-card">
+              <img src="/static/img/brands/b1.png" alt="Amul" onerror="this.src='/static/img/brands/brand-placeholder.png'">
+            </div>
+          </div>
+          <div class="brand-carousel-slide">
+            <div class="brand-logo-card">
+              <img src="/static/img/brands/b2.png" alt="Parle" onerror="this.src='/static/img/brands/brand-placeholder.png'">
+            </div>
+          </div>
+          <div class="brand-carousel-slide">
+            <div class="brand-logo-card">
+              <img src="/static/img/brands/b3.png" alt="Britannia" onerror="this.src='/static/img/brands/brand-placeholder.png'">
+            </div>
+          </div>
+          <div class="brand-carousel-slide">
+            <div class="brand-logo-card">
+              <img src="/static/img/brands/b4.png" alt="Maggi" onerror="this.src='/static/img/brands/brand-placeholder.png'">
+            </div>
+          </div>
+          <div class="brand-carousel-slide">
+            <div class="brand-logo-card">
+              <img src="/static/img/brands/b5.png" alt="MDH" onerror="this.src='/static/img/brands/brand-placeholder.png'">
+            </div>
+          </div>
+          <div class="brand-carousel-slide">
+            <div class="brand-logo-card">
+              <img src="/static/img/brands/b6.png" alt="Everest" onerror="this.src='/static/img/brands/brand-placeholder.png'">
+            </div>
+          </div>
+          <div class="brand-carousel-slide">
+            <div class="brand-logo-card">
+              <img src="/static/img/brands/b7.png" alt="Dabur" onerror="this.src='/static/img/brands/brand-placeholder.png'">
+            </div>
+          </div>
+          <div class="brand-carousel-slide">
+            <div class="brand-logo-card">
+              <img src="/static/img/brands/b8.png" alt="Nestle" onerror="this.src='/static/img/brands/brand-placeholder.png'">
+            </div>
+          </div>
+          <div class="brand-carousel-slide">
+            <div class="brand-logo-card">
+              <img src="/static/img/brands/b9.png" alt="Haldiram" onerror="this.src='/static/img/brands/brand-placeholder.png'">
+            </div>
+          </div>
+          <div class="brand-carousel-slide">
+            <div class="brand-logo-card">
+              <img src="/static/img/brands/b10.png" alt="Gits" onerror="this.src='/static/img/brands/brand-placeholder.png'">
+            </div>
+          </div>
+          <div class="brand-carousel-slide">
+            <div class="brand-logo-card">
+              <img src="/static/img/brands/b11.png" alt="Ashirvad" onerror="this.src='/static/img/brands/brand-placeholder.png'">
+            </div>
+          </div>
+          <div class="brand-carousel-slide">
+            <div class="brand-logo-card">
+              <img src="/static/img/brands/b12.png" alt="Tata" onerror="this.src='/static/img/brands/brand-placeholder.png'">
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <button class="brand-carousel-btn brand-next" id="brandNext"><i class="fa fa-chevron-right"></i></button>
+    </div>
+    
+    <!-- Carousel Dots -->
+    <div class="brand-carousel-dots" id="brandDots"></div>
+  </div>
+</section>
+
+
+<!-- ===== PAGE CSS ===== -->
+<style>
+
+/* ══════════════════════════════════════════
+   SECTION SYSTEM
+   Order: White → Dark-img → White → Dark-img → White
+══════════════════════════════════════════ */
+.hs { padding: 0; overflow: hidden; }
+.hs-white { background: #ffffff; }
+
+.hs-dark {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 560px;
+}
+@media (max-width: 768px) {
+  .hs-dark { background-attachment: scroll; }
+}
+
+/* Pure black overlay */
+.hs-dark-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.68);
+  z-index: 1;
+}
+
+/* TEXT COLUMN */
+.hs-text-side {
+  display: flex;
+  align-items: center;
+}
+.hs-text-inner {
+  padding: 80px 64px;
+  max-width: 600px;
+}
+
+/* IMAGE COLUMN */
+.hs-img-side { padding: 0; }
+.hs-img-wrap {
+  position: relative;
+  height: 100%;
+  min-height: 520px;
+  overflow: hidden;
+}
+.hs-img-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.hs-img-wrap:hover img { transform: scale(1.04); }
+
+/* Badge on image */
+.hs-badge {
+  position: absolute;
+  bottom: 30px; right: 30px;
+  background: var(--orange);
+  color: white;
+  border-radius: 14px;
+  padding: 14px 22px;
+  text-align: center;
+  box-shadow: 0 8px 28px rgba(232,132,26,0.5);
+}
+.hs-badge-num {
+  display: block;
+  font-family: var(--font-head);
+  font-size: 2rem; font-weight: 900; line-height: 1;
+}
+.hs-badge-txt {
+  display: block;
+  font-size: 0.7rem; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  opacity: 0.9; margin-top: 3px;
+}
+
+/* TYPOGRAPHY */
+.hs-eyebrow {
+  display: inline-block;
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--orange);
+  background: rgba(232,132,26,0.1);
+  border: 1px solid rgba(232,132,26,0.25);
+  padding: 4px 14px; border-radius: 100px;
+  margin-bottom: 16px;
+}
+.hs-title {
+  font-family: var(--font-head);
+  font-size: 2.6rem; font-weight: 800;
+  color: var(--navy); line-height: 1.1; margin-bottom: 18px;
+}
+.hs-title span { color: var(--orange); }
+.hs-title.text-white { color: #ffffff !important; }
+.hs-desc {
+  color: var(--text-mid);
+  font-size: 0.97rem; line-height: 1.8; margin-bottom: 24px;
+}
+
+/* FEATURES */
+.hs-features { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+.hs-feat { display: flex; align-items: center; gap: 10px; font-size: 0.9rem; color: var(--text-dark); font-weight: 600; }
+.hs-feat i { color: var(--orange); font-size: 1rem; flex-shrink: 0; }
+
+/* BUTTON */
+.hs-btn {
+  display: inline-flex; align-items: center;
+  background: var(--navy); color: white;
+  border-radius: 100px; padding: 12px 28px;
+  font-weight: 700; font-size: 0.9rem;
+  transition: all 0.25s; text-decoration: none;
+}
+.hs-btn:hover { background: var(--orange); color: white; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,132,26,0.35); }
+
+/* WHY LIST */
+.hs-why-list { display: flex; flex-direction: column; gap: 18px; }
+.hs-wl-item { display: flex; align-items: flex-start; gap: 14px; }
+.hs-wl-icon {
+  width: 44px; height: 44px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--orange); font-size: 1rem; flex-shrink: 0;
+}
+.hs-wl-item strong { display: block; font-size: 0.92rem; font-weight: 700; color: #fff; margin-bottom: 3px; }
+.hs-wl-item p { font-size: 0.83rem; color: rgba(255,255,255,0.65); margin: 0; line-height: 1.5; }
+
+/* ══════════════════════════════════════════
+   PRODUCT CATEGORY CARDS
+══════════════════════════════════════════ */
+.pcc-card {
+  display: block; text-decoration: none;
+  border-radius: var(--radius-lg); overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.35);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.pcc-card:hover { transform: translateY(-6px); box-shadow: 0 18px 48px rgba(0,0,0,0.5); }
+
+.pcc-img-wrap {
+  position: relative; height: 240px;
+  background: var(--navy-mid); overflow: hidden;
+}
+.pcc-img-wrap img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  display: block; transition: transform 0.5s ease;
+}
+.pcc-card:hover .pcc-img-wrap img { transform: scale(1.08); }
+
+.pcc-fallback {
+  display: none; width: 100%; height: 100%;
+  align-items: center; justify-content: center;
+  background: linear-gradient(135deg, var(--navy-mid), var(--navy-light));
+}
+.pcc-fallback i { font-size: 4rem; color: rgba(232,132,26,0.45); }
+
+.pcc-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(5,12,25,0.92) 0%, rgba(5,12,25,0.3) 55%, transparent 100%);
+  z-index: 1;
+}
+
+.pcc-label {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 16px 20px;
+  font-family: var(--font-head);
+  font-size: 1.15rem; font-weight: 700;
+  color: white; letter-spacing: 0.02em;
+  z-index: 2; background: transparent;
+  transition: background 0.3s;
+}
+.pcc-card:hover .pcc-label { background: rgba(232,132,26,0.88); }
+
+.pcc-card::after {
+  content: ''; position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px; background: var(--orange);
+  transform: scaleX(0);
+  transition: transform 0.35s ease; z-index: 3;
+}
+.pcc-card:hover::after { transform: scaleX(1); }
+
+/* ══════════════════════════════════════════
+   BRAND CAROUSEL SLIDER
+══════════════════════════════════════════ */
+.brand-carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.brand-carousel-container {
+  overflow: hidden;
+  flex: 1;
+  border-radius: 16px;
+}
+
+.brand-carousel-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  gap: 20px;
+}
+
+.brand-carousel-slide {
+  flex: 0 0 calc(20% - 16px);
+}
+
+.brand-logo-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(29,46,74,0.08);
+  border: 1px solid rgba(29,46,74,0.06);
+  transition: all 0.3s ease;
+}
+
+.brand-logo-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(29,46,74,0.15);
+  border-color: rgba(232,132,26,0.3);
+}
+
+.brand-logo-card img {
+  max-width: 100%;
+  max-height: 80px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.brand-logo-card:hover img {
+  filter: grayscale(0%);
+  opacity: 1;
+}
+
+/* Carousel Navigation Buttons - SQUARE */
+.brand-carousel-btn {
+  width: 40px;
+  height: 44px;
+  border-radius: 4px;
+  background: white;
+  border: 1px solid rgba(29,46,74,0.15);
+  color: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(29,46,74,0.1);
+  flex-shrink: 0;
+}
+
+.brand-carousel-btn:hover {
+  background: var(--orange);
+  color: white;
+  border-color: var(--orange);
+  transform: scale(1.1);
+}
+
+.brand-carousel-btn i {
+  font-size: 1rem;
+}
+
+/* Carousel Dots */
+.brand-carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.brand-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(29,46,74,0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.brand-dot.active {
+  background: var(--orange);
+  width: 30px;
+  border-radius: 5px;
+}
+
+.brand-dot:hover {
+  background: rgba(232,132,26,0.5);
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media (max-width: 992px) {
+  .hs-text-inner { padding: 50px 28px; max-width: 100%; }
+  .hs-img-wrap { min-height: 360px; }
+  .hs-title { font-size: 2rem; }
+}
+@media (max-width: 768px) {
+  .hs-text-inner { padding: 40px 20px; }
+  .hs-img-wrap { min-height: 260px; }
+  .hs-title { font-size: 1.8rem; }
+  .pcc-img-wrap { height: 200px; }
+  .brand-carousel-slide { flex: 0 0 calc(50% - 8px); min-width: unset; }
+  .brand-carousel-wrapper { gap: 10px; }
+  .brand-carousel-btn { width: 32px; height: 36px; border-radius: 4px; font-size: 0.8rem; }
+  .brand-logo-card { height: 100px; padding: 16px; }
+  .brand-carousel-track { gap: 16px; }
+}
+
+@media (max-width: 480px) {
+  .brand-carousel-slide { flex: 0 0 calc(50% - 6px) !important; min-width: unset !important; }
+  .brand-carousel-wrapper { gap: 8px !important; }
+  .brand-carousel-btn { width: 28px !important; height: 32px !important; border-radius: 3px !important; }
+  .brand-logo-card { height: 90px !important; padding: 12px !important; }
+  .brand-carousel-track { gap: 12px !important; }
+}
+</style>
+
+<script>
+/* Brand Carousel Slider */
+const brandTrack = document.getElementById('brandCarouselTrack');
+const brandPrev = document.getElementById('brandPrev');
+const brandNext = document.getElementById('brandNext');
+const brandDots = document.getElementById('brandDots');
+
+if (brandTrack && brandPrev && brandNext) {
+  const slides = brandTrack.querySelectorAll('.brand-carousel-slide');
+  const totalSlides = slides.length;
+  let currentIndex = 0;
+  let slidesPerView = 5;
+  
+  // Create dots
+  const totalDots = Math.ceil(totalSlides / slidesPerView);
+  for (let i = 0; i < totalDots; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'brand-dot' + (i === 0 ? ' active' : '');
+    dot.addEventListener('click', () => goToSlide(i * slidesPerView));
+    brandDots.appendChild(dot);
+  }
+  
+  const dots = brandDots.querySelectorAll('.brand-dot');
+  
+  function updateSlidesPerView() {
+    if (window.innerWidth < 576) slidesPerView = 2;
+    else if (window.innerWidth < 768) slidesPerView = 3;
+    else if (window.innerWidth < 992) slidesPerView = 4;
+    else slidesPerView = 5;
+  }
+  
+  function goToSlide(index) {
+    currentIndex = index;
+    const maxIndex = totalSlides - slidesPerView;
+    if (currentIndex > maxIndex) currentIndex = maxIndex;
+    if (currentIndex < 0) currentIndex = 0;
+    
+    // Dynamic gap based on screen width
+    let gap = 20;
+    if (window.innerWidth <= 480) gap = 12;
+    else if (window.innerWidth <= 768) gap = 16;
+    
+    const slideWidth = slides[0].offsetWidth + gap;
+    brandTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+    
+    // Update dots
+    const activeDotIndex = Math.floor(currentIndex / slidesPerView);
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('active', i === activeDotIndex);
+    });
+  }
+  
+  brandPrev.addEventListener('click', () => goToSlide(currentIndex - slidesPerView));
+  brandNext.addEventListener('click', () => goToSlide(currentIndex + slidesPerView));
+  
+  // Touch/drag support
+  let startX = 0;
+  let currentX = 0;
+  
+  brandTrack.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+  }, { passive: true });
+  
+  brandTrack.addEventListener('touchend', (e) => {
+    currentX = e.changedTouches[0].clientX;
+    const diff = startX - currentX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) goToSlide(currentIndex + slidesPerView);
+      else goToSlide(currentIndex - slidesPerView);
+    }
+  }, { passive: true });
+  
+  // Auto slide
+  let autoSlide = setInterval(() => goToSlide(currentIndex + slidesPerView), 4000);
+  
+  brandTrack.addEventListener('mouseenter', () => clearInterval(autoSlide));
+  brandTrack.addEventListener('mouseleave', () => {
+    autoSlide = setInterval(() => goToSlide(currentIndex + slidesPerView), 4000);
+  });
+  
+  // Update on resize
+  window.addEventListener('resize', () => {
+    updateSlidesPerView();
+    goToSlide(0);
+  }, { passive: true });
+  
+  updateSlidesPerView();
+}
+</script>
+
+{% endblock %}

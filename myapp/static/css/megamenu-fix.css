@@ -1,0 +1,223 @@
+/* =====================================================
+   MEGA MENU - Fixed Version
+   Fixes: Firefox scroll, gap after scroll, sibling hover
+   ===================================================== */
+
+/* Dropdown positioning */
+.mega-dropdown { position: static !important; }
+
+/* ── CRITICAL: Navbar must be above hero/page content ── */
+#mainNav {
+  z-index: 1060 !important;
+}
+
+/* Mega menu base - hidden by default */
+.mega-menu {
+  position: fixed !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  border: none !important;
+  border-radius: 0 0 20px 20px !important;
+  box-shadow: 0 20px 60px rgba(29,46,74,0.22) !important;
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  /* Must be above navbar (1060) so it overlays page content correctly */
+  z-index: 1059 !important;
+  /* Use visibility+opacity instead of display:none for smooth transition */
+  display: block !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity 0.18s ease, visibility 0.18s ease !important;
+  /* top is set ONLY by JS — no hardcoded value here so JS can control it */
+  top: 0 !important;
+}
+
+/* JS-controlled open state (works in all browsers) */
+.mega-menu.is-open {
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: all !important;
+}
+
+/* Mega menu inner content */
+.mega-menu-inner {
+  background: #fff !important;
+  padding: 32px !important;
+  border-top: 3px solid #E8841A !important;
+  border-radius: 0 0 20px 20px !important;
+}
+
+/* Header section */
+.mega-menu-header {
+  margin-bottom: 24px !important;
+}
+
+.mega-menu-header h4 {
+  font-family: 'Barlow Condensed', sans-serif !important;
+  font-size: 1.5rem !important;
+  color: #1D2E4A !important;
+  font-weight: 800 !important;
+  margin: 0 0 4px !important;
+}
+
+.mega-menu-header p {
+  color: #4a5568 !important;
+  font-size: 0.85rem !important;
+  margin: 0 !important;
+}
+
+/* Menu items */
+.mega-item {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  padding: 12px 14px !important;
+  border-radius: 12px !important;
+  color: #1a2235 !important;
+  font-size: 0.85rem !important;
+  font-weight: 600 !important;
+  transition: all 0.2s !important;
+  border: 1px solid transparent !important;
+  margin: 4px !important;
+  text-decoration: none !important;
+}
+
+.mega-item i {
+  color: #E8841A !important;
+  font-size: 1.1rem !important;
+  width: 22px !important;
+  text-align: center !important;
+}
+
+.mega-item:hover {
+  background: #eef1f7 !important;
+  border-color: rgba(30,50,80,0.12) !important;
+  color: #1D2E4A !important;
+  transform: translateX(3px) !important;
+  text-decoration: none !important;
+}
+
+/* Featured section */
+.mega-featured {
+  background: linear-gradient(160deg, #1D2E4A 0%, #2e4470 100%) !important;
+  border-radius: 20px !important;
+  color: white !important;
+  padding: 30px 24px !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+}
+
+.mega-featured i { color: #E8841A !important; }
+
+.mega-featured h5 {
+  font-family: 'Barlow Condensed', sans-serif !important;
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 10px !important;
+  color: white !important;
+}
+
+.mega-featured p {
+  font-size: 0.83rem !important;
+  opacity: 0.8 !important;
+  line-height: 1.6 !important;
+  margin-bottom: 20px !important;
+  color: white !important;
+}
+
+.mega-feat-badge {
+  background: #E8841A !important;
+  color: white !important;
+  font-size: 0.7rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  padding: 3px 10px !important;
+  border-radius: 100px !important;
+  margin-bottom: 16px !important;
+}
+
+.mega-cta {
+  background: #E8841A !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 100px !important;
+  padding: 8px 18px !important;
+  font-size: 0.8rem !important;
+  font-weight: 700 !important;
+  text-decoration: none !important;
+  display: inline-block !important;
+  cursor: pointer !important;
+  transition: background 0.2s !important;
+}
+
+.mega-cta:hover {
+  background: #f5a04a !important;
+  color: white !important;
+  text-decoration: none !important;
+}
+
+/* =====================================================
+   MOBILE MEGA MENU (< 992px)
+   ===================================================== */
+@media (max-width: 991px) {
+
+  .mega-menu {
+    position: static !important;
+    width: 100% !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    border-top: 1px solid #dee2e6 !important;
+    /* Reset visibility/opacity for mobile - use display */
+    visibility: visible !important;
+    opacity: 1 !important;
+    pointer-events: all !important;
+    transition: none !important;
+    /* Hidden by default on mobile — JS toggles display */
+    display: none !important;
+    max-height: 0;
+    overflow: hidden;
+    top: auto !important;
+  }
+
+  .mega-menu.mobile-open {
+    display: block !important;
+    max-height: 70vh !important;
+    overflow-y: auto !important;
+  }
+
+  body.mega-open {
+    overflow: auto !important;
+  }
+
+  .mega-menu-inner {
+    padding: 16px !important;
+    border-radius: 0 !important;
+  }
+
+  .mega-item {
+    padding: 10px 12px !important;
+    margin: 2px 0 !important;
+  }
+
+  .mega-featured {
+    margin-top: 16px !important;
+    padding: 20px 16px !important;
+  }
+
+  #productsMenu::after {
+    content: ' ▾';
+    font-size: 0.75rem;
+    opacity: 0.7;
+    margin-left: 2px;
+  }
+
+  #productsMenu.active::after {
+    content: ' ▴';
+  }
+}

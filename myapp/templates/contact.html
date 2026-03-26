@@ -1,0 +1,151 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="rte-hero">
+  <div class="rte-hero-inner position-relative" style="z-index:2">
+    <div class="eyebrow"><i class="fa fa-ship"></i> Sara International · Export Catalog</div>
+    <h1>Contact <span>Us</span> </h1>
+  </div>
+  <i class="fa fa-ship hero-ship"></i>
+</section>
+
+<section id="contact" class="contact-section section-pad">
+  <div class="container">
+    <div class="text-center mb-5">
+      <div class="section-eyebrow">Get In Touch</div>
+      <h2 class="section-title"><span class="text-accent">Let's Start Trading</span></h2>
+    </div>
+    <div class="row g-5">
+      <div class="col-lg-5">
+        <div class="contact-info-block">
+          <h4 class="mb-4">Reach Out To Us</h4>
+          <div class="ci-item"><div class="ci-icon"><i class="fa fa-map-marker-alt"></i></div><div><strong>Address</strong><p>Plot No. 116, Panchratna Two Industrial Park, Nr. Kamod Circle, Ahmedabad Dholka Highway, Vill. Paldi Kankaj, Ta. Daskroi, Ahmedabad - 382425</p></div></div>
+          <div class="ci-item"><div class="ci-icon"><i class="fa fa-phone-alt"></i></div><div><strong>Phone</strong><p>+91 80007 88007 | +91 98790 70521</p></div></div>
+          <div class="ci-item"><div class="ci-icon"><i class="fa fa-envelope"></i></div><div><strong>Email</strong><p>sara.international.1985@gmail.com</p></div></div>
+          <div class="ci-item"><div class="ci-icon"><i class="fa fa-clock"></i></div><div><strong>Working Hours</strong><p>Monday – Saturday: 9:00 AM – 6:00 PM</p></div></div>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <form class="contact-form" id="contactForm" method="POST">
+          {% csrf_token %}
+
+          <!-- Success Message -->
+          <div id="successMessage" class="alert alert-success d-none mb-3" role="alert">
+            <i class="fa fa-check-circle me-2"></i>
+            <strong>Thank you!</strong> Your enquiry has been sent successfully. We will contact you soon.
+          </div>
+
+          <!-- Error Message -->
+          <div id="errorMessage" class="alert alert-danger d-none mb-3" role="alert">
+            <i class="fa fa-times-circle me-2"></i>
+            <strong>Oops!</strong> Something went wrong. Please try again.
+          </div>
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="form-label">Full Name *</label>
+              <input type="text" name="name" class="form-control cf-input" placeholder="Your name" required/>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Company Name</label>
+              <input type="text" name="company" class="form-control cf-input" placeholder="Your company"/>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Email Address *</label>
+              <input type="email" name="email" class="form-control cf-input" placeholder="you@company.com" required/>
+            </div>
+            <div class="col-md-6">
+              <label class="form-label">Phone Number</label>
+              <input type="tel" name="phone" class="form-control cf-input" placeholder="+91 00000 00000"/>
+            </div>
+            <div class="col-12">
+              <label class="form-label">Product Category</label>
+              <select class="form-select cf-input" name="product_category">
+                <option value="">— Select a Category —</option>
+                <option value="Agarbatti">Agarbatti</option>
+                <option value="Beans, Pulses & Lentils">Beans, Pulses & Lentils</option>
+                <option value="Cookies">Cookies</option>
+                <option value="Dhoop Stick">Dhoop Stick</option>
+                <option value="Dry Fruits">Dry Fruits</option>
+                <option value="Flour & Millets">Flour & Millets</option>
+                <option value="Ground Spices">Ground Spices</option>
+                <option value="Makhana, Chana & Peanuts">Makhana, Chana & Peanuts</option>
+                <option value="Mukhwas">Mukhwas</option>
+                <option value="Our Speciality">Our Speciality</option>
+                <option value="Papad & Khakhra">Papad & Khakhra</option>
+                <option value="Pickles & Chutney">Pickles & Chutney</option>
+                <option value="Pooja Samagri">Pooja Samagri</option>
+                <option value="Ready Paste">Ready Paste</option>
+                <option value="Ready To Eat">Ready To Eat</option>
+                <option value="Whole Spices">Whole Spices</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label class="form-label">Message *</label>
+              <textarea name="message" class="form-control cf-input" rows="4" placeholder="Describe your requirements..." required></textarea>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary-main w-100">Send Enquiry <i class="fa fa-paper-plane ms-2"></i></button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+
+    e.preventDefault();
+
+    const form = this;
+    const formData = new FormData(form);
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    const successMsg = document.getElementById('successMessage');
+    const errorMsg = document.getElementById('errorMessage');
+
+    // Hide previous messages
+    successMsg.classList.add('d-none');
+    errorMsg.classList.add('d-none');
+
+    // Loading state
+    submitBtn.innerHTML = '<i class="fa fa-spinner fa-spin me-2"></i>Sending...';
+    submitBtn.disabled = true;
+
+    fetch('/send-contact-email/', {
+        method: 'POST',
+        headers: {
+            'X-CSRFToken': document.querySelector('[name=csrfmiddlewaretoken]').value
+        },
+        body: formData
+    })
+
+    .then(response => response.json())
+
+    .then(result => {
+
+        if(result.success){
+            successMsg.classList.remove('d-none');
+            form.reset();
+        } else {
+            errorMsg.classList.remove('d-none');
+        }
+
+    })
+
+    .catch(error => {
+        console.error(error);
+        errorMsg.classList.remove('d-none');
+    })
+
+    .finally(() => {
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+    });
+
+});
+</script>
+
+{% endblock %}  

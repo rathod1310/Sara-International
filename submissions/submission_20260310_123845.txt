@@ -1,0 +1,14 @@
+Subject: New Contact Enquiry from Om rathod
+
+Contact Form Details:
+
+Name: Om rathod
+Company: Hello Test
+Email: omrathod@gmail.com
+Phone: +917600980312
+Product Category: Dry Fruits
+
+Message: this is demo mail
+
+---
+From: Sara International Website
