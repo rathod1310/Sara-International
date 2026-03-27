@@ -116,8 +116,8 @@ def send_contact_email(request):
             email_msg = EmailMessage(
                 subject,
                 body,
-                'kanudorathod999@gmail.com',
-                ['rathodom1310@gmail.com'],
+                'SENDER MAIL',
+                ['RECIVER MAIL'],
             )
             email_msg.content_subtype = 'html'  # HTML email
             email_msg.send()
