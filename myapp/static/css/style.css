@@ -129,7 +129,6 @@ img { max-width: 100%; }
 .main-nav.scrolled .nav-link,
 .main-nav.scrolled .navbar-brand { color: #1a2235 !important; font-weight: 700; }
 .main-nav.scrolled .nav-link.active { color: var(--orange) !important; }
-.main-nav.scrolled .nav-link:hover { color: var(--orange) !important; }
 .main-nav.scrolled .brand-tagline { color: rgba(255,255,255,0.55) !important; }
 
 .navbar-brand { padding: 10px 0; }
@@ -182,7 +181,6 @@ img { max-width: 100%; }
   margin: 0 !important;
   z-index: 1049;
   display: none;
-  top: 80px !important;
 }
 
 .mega-menu.is-open {
@@ -872,41 +870,6 @@ img.footer-logo { height: 100px !important; max-width: 200px !important; }
   .whatsapp-float { bottom: 75px; right: 20px; width: 42px; height: 42px; font-size: 1.1rem; }
   /* Mobile Back to top button positioning */
   .back-to-top { bottom: 20px; right: 20px; width: 42px; height: 42px; }
-  
-  /* MEGA MENU - Tablet/Mobile styles */
-  .mega-menu {
-    position: fixed !important;
-    top: 56px !important;
-    left: 0 !important;
-    right: 0 !important;
-    width: 100% !important;
-    max-height: calc(100vh - 56px);
-    border-radius: 0 0 12px 12px;
-    z-index: 9998;
-  }
-  .mega-menu-inner {
-    padding: 16px 20px;
-    max-width: 100%;
-  }
-  .mega-menu-header h4 {
-    font-size: 1.2rem;
-  }
-  .mega-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 6px;
-  }
-  .mega-item {
-    padding: 10px 12px;
-    font-size: 0.8rem;
-    margin: 1px;
-  }
-  .mega-item i {
-    font-size: 1rem;
-    width: 20px;
-  }
-  .mega-featured {
-    display: none; /* Hide featured on tablet */
-  }
 }
 
 @media (max-width: 480px) {
@@ -952,32 +915,4 @@ img.footer-logo { height: 100px !important; max-width: 200px !important; }
   .whatsapp-float { bottom: 70px; right: 18px; width: 40px; height: 40px; font-size: 1rem; }
   /* Small mobile Back to top button positioning */
   .back-to-top { bottom: 18px; right: 18px; width: 40px; height: 40px; }
-  
-  /* MEGA MENU - Small mobile styles */
-  .mega-menu {
-    top: 52px !important;
-    max-height: calc(100vh - 52px);
-    border-radius: 0 0 8px 8px;
-  }
-  .mega-menu-inner {
-    padding: 12px 16px;
-  }
-  .mega-menu-header h4 {
-    font-size: 1.1rem;
-  }
-  .mega-menu-header p {
-    font-size: 0.75rem;
-  }
-  .mega-grid {
-    grid-template-columns: 1fr;
-    gap: 4px;
-  }
-  .mega-item {
-    padding: 8px 10px;
-    font-size: 0.78rem;
-  }
-  .mega-item i {
-    font-size: 0.9rem;
-    width: 18px;
-  }
 }
