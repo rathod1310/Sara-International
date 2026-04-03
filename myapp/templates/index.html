@@ -1,12 +1,13 @@
 {% extends "base.html" %}
+<!-- {% load static %} -->
 {% block content %}
 
 <!-- ===== 1. HERO BANNER ===== -->
 <section id="home" class="hero-section">
   <div class="hero-slides" id="heroSlides">
-    <div class="hero-slide active" style="background-image: url('/static/img/banner1.png')"></div>
-    <div class="hero-slide" style="background-image: url('/static/img/banner2.png')"></div>
-    <div class="hero-slide" style="background-image: url('/static/img/banner4.png')"></div>
+    <div class="hero-slide active" style="background-image: url('/demo/static/img/banner1.png')"></div>
+<div class="hero-slide" style="background-image: url('/demo/static/img/banner2.png')"></div>
+<div class="hero-slide" style="background-image: url('/demo/static/img/banner3.png')"></div>
     <!-- <div class="hero-slide" style="background-image: url('/static/img/service-4.jpg')"></div> -->
   </div>
   <div class="hero-grad-overlay"></div>
@@ -21,13 +22,15 @@
           <a href="{% url 'ready_to_eat' %}" class="btn btn-primary-main">Explore Products <i class="fa fa-arrow-right ms-2"></i></a>
         </div>
         <div class="hero-stats">
+          <div class="stat-item"><span class="stat-num">10+</span><span class="stat-label">Countries</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><span class="stat-num">55+</span><span class="stat-label">SATISFIED CLIENTS</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><span class="stat-num">7+</span><span class="stat-label">Years Experience</span></div>
+          <div class="stat-divider"></div>
           <div class="stat-item"><span class="stat-num">500+</span><span class="stat-label">Products</span></div>
           <div class="stat-divider"></div>
-          <div class="stat-item"><span class="stat-num">80+</span><span class="stat-label">Countries</span></div>
-          <div class="stat-divider"></div>
-          <div class="stat-item"><span class="stat-num">15+</span><span class="stat-label">Years Experience</span></div>
-          <div class="stat-divider"></div>
-          <div class="stat-item"><span class="stat-num">2000+</span><span class="stat-label">Clients</span></div>
+          <div class="stat-item"><span class="stat-num">5000+</span><span class="stat-label">SKUS</span></div>
         </div>
       </div>
       <div class="col-lg-5 d-none d-lg-flex justify-content-center">
@@ -62,20 +65,18 @@
     <span><i class="fa fa-wheat-awn"></i> Flour &amp; Millets</span>
     <span><i class="fa fa-seedling"></i> Beans &amp; Pulses</span>
     <span><i class="fa fa-star"></i> Our Speciality</span>
-    <span><i class="fa fa-jar"></i> Pickles &amp; Chutney</span>
-    <span><i class="fa fa-blender"></i> Ready Paste</span>
+    <span><i class="fa fa-jar"></i> Pickles &amp; Chutney &amp; Ready Paste</span>
     <span><i class="fa fa-cookie"></i> Papad &amp; Khakhra</span>
     <span><i class="fa fa-apple-whole"></i> Dry Fruits</span>
     <span><i class="fa fa-cookie-bite"></i> Cookies</span>
-    <span><i class="fa fa-fire"></i> Agarbatti</span>
+    <span><i class="fa fa-fire"></i> Agarbatti & Dhoop</span>
     <span><i class="fa fa-seedling"></i> Ready to Eat Products</span>
     <span><i class="fa fa-pepper-hot"></i> Whole Spices</span>
     <span><i class="fa fa-mortar-pestle"></i> Ground Spices</span>
     <span><i class="fa fa-wheat-awn"></i> Flour &amp; Millets</span>
     <span><i class="fa fa-seedling"></i> Beans &amp; Pulses</span>
     <span><i class="fa fa-star"></i> Our Speciality</span>
-    <span><i class="fa fa-jar"></i> Pickles &amp; Chutney</span>
-    <span><i class="fa fa-blender"></i> Ready Paste</span>
+    <span><i class="fa fa-jar"></i> Pickles &amp; Chutney &amp; Ready Paste</span>
   </div>
 </div>
 
@@ -90,10 +91,10 @@
           <h2 class="hs-title">India's Trusted <span>Food Export</span> Partner</h2>
           <p class="hs-desc">We SARA INTERNATIONAL engaged in the business of processing, supplying &amp; exporting of <strong>FOOD, SPICES, PULSES and GENERAL PROVISIONS, FMCG and GROCERY products</strong> which includes Rice, Wheat, Wheat Flour, Noodles, Kurkure, Namkeen, All types of Pooja material, Agarbatti, and Many more range of Indian products.</p>
           <div class="hs-features">
-            <div class="hs-feat"><i class="fa fa-check-circle"></i><span>ISO Certified Manufacturing</span></div>
+            <!-- <div class="hs-feat"><i class="fa fa-check-circle"></i><span>ISO Certified Manufacturing</span></div> -->
             <div class="hs-feat"><i class="fa fa-check-circle"></i><span>FSSAI &amp; APEDA Registered</span></div>
-            <div class="hs-feat"><i class="fa fa-check-circle"></i><span>Export to 80+ Countries</span></div>
-            <div class="hs-feat"><i class="fa fa-check-circle"></i><span>15+ Years of Excellence</span></div>
+            <div class="hs-feat"><i class="fa fa-check-circle"></i><span>Export to 10+ Countries</span></div>
+            <div class="hs-feat"><i class="fa fa-check-circle"></i><span>7+ Years of Excellence</span></div>
           </div>
           <a href="{% url 'about' %}" class="hs-btn">Learn More About Us <i class="fa fa-arrow-right ms-2"></i></a>
         </div>
@@ -203,24 +204,13 @@
       </div>
 
       <div class="col-lg-3 col-md-4 col-6">
-        <a href="{% url 'pickles_chutney' %}" class="pcc-card">
+        <a href="{% url 'pickles_chutney_ready_paste' %}" class="pcc-card">
           <div class="pcc-img-wrap">
-            <img src="/static/img/Pickles.jpg" alt="Pickles &amp; Chutney" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <img src="/static/img/Pickles.jpg" alt="Pickles &amp; Chutney &amp; Ready Paste" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
             <div class="pcc-fallback"><i class="fa fa-jar"></i></div>
             <div class="pcc-overlay"></div>
           </div>
-          <div class="pcc-label">Pickles &amp; Chutney</div>
-        </a>
-      </div>
-
-      <div class="col-lg-3 col-md-4 col-6">
-        <a href="{% url 'ready_paste' %}" class="pcc-card">
-          <div class="pcc-img-wrap">
-            <img src="/static/img/Garlic Paste.jpg" alt="Ready Paste" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-            <div class="pcc-fallback"><i class="fa fa-blender"></i></div>
-            <div class="pcc-overlay"></div>
-          </div>
-          <div class="pcc-label">Ready Paste</div>
+          <div class="pcc-label">Pickles &amp; Chutney &amp; Ready Paste</div>
         </a>
       </div>
 
@@ -249,7 +239,7 @@
       <div class="col-lg-3 col-md-4 col-6">
         <a href="{% url 'cookies' %}" class="pcc-card">
           <div class="pcc-img-wrap">
-            <img src="/static/img/Premium Handcrafted Cookies.jpg" alt="Cookies" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <img src="/static/img/cookies_new.jpg" alt="Cookies" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
             <div class="pcc-fallback"><i class="fa fa-cookie-bite"></i></div>
             <div class="pcc-overlay"></div>
           </div>
@@ -269,35 +259,35 @@
       </div>
 
       <div class="col-lg-3 col-md-4 col-6">
-        <a href="{% url 'agarbatti' %}" class="pcc-card">
+        <a href="{% url 'agarbatti_dhoop' %}" class="pcc-card">
           <div class="pcc-img-wrap">
             <img src="/static/img/agarbatti.png" alt="Agarbatti" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
             <div class="pcc-fallback"><i class="fa fa-wind"></i></div>
             <div class="pcc-overlay"></div>
           </div>
-          <div class="pcc-label">Agarbatti</div>
+          <div class="pcc-label">Agarbatti & Dhoop</div>
         </a>
       </div>
 
       <div class="col-lg-3 col-md-4 col-6">
-        <a href="{% url 'dhoop_stick' %}" class="pcc-card">
+        <a href="{% url 'chana_peanuts' %}" class="pcc-card">
           <div class="pcc-img-wrap">
-            <img src="/static/img/dhoop-stick.png" alt="Dhoop Stick" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
-            <div class="pcc-fallback"><i class="fa fa-spa"></i></div>
-            <div class="pcc-overlay"></div>
-          </div>
-          <div class="pcc-label">Dhoop Stick</div>
-        </a>
-      </div>
-
-      <div class="col-lg-3 col-md-4 col-6">
-        <a href="{% url 'makhana_chana_peanuts' %}" class="pcc-card">
-          <div class="pcc-img-wrap">
-            <img src="/static/img/chana1.png" alt="Makhana, Chana &amp; Peanuts" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <img src="/static/img/chana1.png" alt="Chana &amp; Peanuts" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
             <div class="pcc-fallback"><i class="fa fa-bowl-rice"></i></div>
             <div class="pcc-overlay"></div>
           </div>
-          <div class="pcc-label">Makhana, Chana &amp; Peanuts</div>
+          <div class="pcc-label">Chana &amp; Peanuts</div>
+        </a>
+      </div>
+
+            <div class="col-lg-3 col-md-4 col-6">
+        <a href="{% url 'namkeen' %}" class="pcc-card">
+          <div class="pcc-img-wrap">
+            <img src="/static/img/makhana.png" alt="Namkeen" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+            <div class="pcc-fallback"><i class="fa fa-bowl-rice"></i></div>
+            <div class="pcc-overlay"></div>
+          </div>
+          <div class="pcc-label">Namkeen</div>
         </a>
       </div>
 
@@ -488,7 +478,7 @@
    Order: White → Dark-img → White → Dark-img → White
 ══════════════════════════════════════════ */
 .hs { padding: 0; overflow: hidden; }
-.hs-white { background: #ffffff; }
+.hs-white { background: radial-gradient(circle at top left, rgba(255, 140, 0, 0.25), transparent 40%), radial-gradient(circle at bottom right, rgba(255, 140, 0, 0.15), transparent 40%), linear-gradient(135deg, #ffffff, #fff5eb); }
 
 .hs-dark {
   position: relative;

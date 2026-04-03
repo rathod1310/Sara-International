@@ -26,8 +26,8 @@ SECRET_KEY = 'django-insecure--^iq9mbnsm66uqiu1(@j&tq9d3gw4jcj8a-yvz)&&_4z9)+36(
 # DEBUG = False
 # ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
-DEBUG = True
-ALLOWED_HOSTS = ['*']
+DEBUG = False
+ALLOWED_HOSTS = ["sarainternational.co","www.sarainternational.co","76.13.243.27"]
 
 # Application definition
 
@@ -116,7 +116,13 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/demo/static/'
+STATIC_ROOT = BASE_DIR / 'static'
+
+MEDIA_URL = '/demo/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+FORCE_SCRIPT_NAME = '/demo'
 
 # Email configuration - Simple console output (for testing)
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -130,3 +136,5 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'EMAIL ADDRESS'
 EMAIL_HOST_PASSWORD = 'APP PASSWORD' 
 DEFAULT_FROM_EMAIL = 'EMAIL ADDRESS'
+FORCE_SCRIPT_NAME = '/demo'
+

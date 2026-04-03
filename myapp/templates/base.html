@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sara International</title>
   <link rel="icon" type="image/png" href="{% static '/img/favicon1.jpg' %}">
-  <link rel="stylesheet" href="{% static '/css/bootstrap.min1.css'%}"/>
+  <link rel="stylesheet" href="{% static '/css/bootstrap.min.css'%}"/>
   <link rel="stylesheet" href="{% static '/css/all.min.css'%}"/>
-  <link href="{% static '/css/fonts.css'%}"/>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="{% static '/css/style.css'%}"/>
   <link rel="stylesheet" href="{% static '/css/megamenu-fix.css'%}"/>
 
@@ -85,15 +85,14 @@
                     <div class="col-lg-3 col-md-4 col-6"><a href="{% url 'flour_and_millets' %}" class="mega-item" data-cat="agri"><i class="fa fa-wheat-awn"></i><span>Flour & Millets</span></a></div>
                     <div class="col-lg-3 col-md-4 col-6"><a href="{% url 'beans_pulses_lentils' %}" class="mega-item" data-cat="agri"><i class="fa fa-seedling"></i><span>Beans & Pulses & Lentils</span></a></div>
                     <div class="col-lg-3 col-md-4 col-6"><a href="{% url 'our_speciality' %}" class="mega-item" data-cat="food"><i class="fa fa-star"></i><span>Our Speciality</span></a></div>
-                    <div class="col-lg-3 col-md-4 col-6"><a href="{% url 'pickles_chutney' %}" class="mega-item" data-cat="food"><i class="fa fa-jar"></i><span>Pickles & Chutney</span></a></div>
-                    <div class="col-lg-3 col-md-4 col-6"><a href="{% url 'ready_paste' %}" class="mega-item" data-cat="food"><i class="fa fa-blender"></i><span>Ready Paste</span></a></div>
+                    <div class="col-lg-3 col-md-4 col-6"><a href="{% url 'pickles_chutney_ready_paste' %}" class="mega-item" data-cat="food"><i class="fa fa-jar"></i><span>Pickles & Chutney & Ready Paste</span></a></div> 
                     <div class="col-lg-3 col-md-4 col-6"><a href="{% url 'papad_khakhra' %}" class="mega-item" data-cat="food"><i class="fa fa-cookie"></i><span>Papad & Khakhra</span></a></div>
                     <div class="col-lg-3 col-md-4 col-6"><a href="{% url 'dry_fruits' %}" class="mega-item" data-cat="food"><i class="fa fa-apple-whole"></i><span>Dry Fruits</span></a></div>
                     <div class="col-lg-3 col-md-4 col-6"><a href="{% url 'cookies' %}" class="mega-item" data-cat="food"><i class="fa fa-cookie-bite"></i><span>Cookies</span></a></div>
                     <div class="col-lg-3 col-md-4 col-6"><a href="{% url 'pooja_samagri' %}" class="mega-item" data-cat="food"><i class="fa fa-fire"></i><span>Pooja Samagri</span></a></div>
-                    <div class="col-lg-3 col-md-4 col-6"><a href="{% url 'agarbatti' %}" class="mega-item" data-cat="food"><i class="fa fa-wind"></i><span>Agarbatti</span></a></div>
-                    <div class="col-lg-3 col-md-4 col-6"><a href="{% url 'dhoop_stick' %}" class="mega-item" data-cat="food"><i class="fa fa-spa"></i><span>Dhoop Stick</span></a></div>
-                    <div class="col-lg-3 col-md-4 col-6"><a href="{% url 'makhana_chana_peanuts' %}" class="mega-item" data-cat="food"><i class="fa fa-bowl-rice"></i><span>Makhana, Chana & Peanuts</span></a></div>
+                    <div class="col-lg-3 col-md-4 col-6"><a href="{% url 'agarbatti_dhoop' %}" class="mega-item" data-cat="food"><i class="fa fa-wind"></i><span>Agarbatti & Dhoop</span></a></div>
+                    <div class="col-lg-3 col-md-4 col-6"><a href="{% url 'chana_peanuts' %}" class="mega-item" data-cat="food"><i class="fa fa-bowl-rice"></i><span>Chana & Peanuts</span></a></div>
+                    <div class="col-lg-3 col-md-4 col-6"><a href="{% url 'namkeen' %}" class="mega-item" data-cat="food"><i class="fa fa-bowl-rice"></i><span>Namkeen</span></a></div>
                     <div class="col-lg-3 col-md-4 col-6"><a href="{% url 'mukhavas' %}" class="mega-item" data-cat="food"><i class="fa fa-leaf"></i><span>Mukhavas</span></a></div>
                   </div>
                 </div>
@@ -159,22 +158,21 @@
         <div class="col-lg-3 col-md-4">
           <h6 class="footer-heading">Product Categories</h6>
           <ul class="footer-links two-col">
-            <li><a href="{% url 'agarbatti' %}">Agarbatti</a></li>
+            <li><a href="{% url 'agarbatti_dhoop' %}">Agarbatti & Dhoop</a></li>
             <li><a href="{% url 'beans_pulses_lentils' %}">Beans & Pulses</a></li>
             <li><a href="{% url 'cookies' %}">Cookies</a></li>
-            <li><a href="{% url 'dhoop_stick' %}">Dhoop Stick</a></li>
             <li><a href="{% url 'dry_fruits' %}">Dry Fruits</a></li>
             <li><a href="{% url 'flour_and_millets' %}">Flour & Millets</a></li>
             <li><a href="{% url 'ground_spices' %}">Ground Spices</a></li>
-            <li><a href="{% url 'makhana_chana_peanuts' %}">Makhana & Chana</a></li>
+            <li><a href="{% url 'chana_peanuts' %}">Chana & Peanut</a></li>
             <li><a href="{% url 'mukhavas' %}">Mukhavas</a></li>
             <li><a href="{% url 'our_speciality' %}">Our Speciality</a></li>
             <li><a href="{% url 'papad_khakhra' %}">Papad & Khakhra</a></li>
-            <li><a href="{% url 'pickles_chutney' %}">Pickles & Chutney</a></li>
             <li><a href="{% url 'pooja_samagri' %}">Pooja Samagri</a></li>
-            <li><a href="{% url 'ready_paste' %}">Ready Paste</a></li>
             <li><a href="{% url 'ready_to_eat' %}">Ready To Eat</a></li>
             <li><a href="{% url 'whole_spices' %}">Whole Spices</a></li>
+            <li><a href="{% url 'namkeen' %}">Namkeen</a></li>
+            <li><a href="{% url 'pickles_chutney_ready_paste' %}">Pickles & Chutney & Ready Paste</a></li>
           </ul>
         </div>
         <div class="col-lg-3 col-md-4">

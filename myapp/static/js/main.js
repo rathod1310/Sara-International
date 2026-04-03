@@ -5,127 +5,6 @@
 'use strict';
 
 /* ══════════════════════════════════════════
-   PRODUCTS DATA
-══════════════════════════════════════════ */
-// const PRODUCTS = {
-//   agri: {
-//     label: "Agricultural Products",
-//     icon: "fa-seedling",
-//     items: [
-//       { name: "Basmati Rice", sub: "Premium Long Grain", grade: "premium", hs: "1006.30", status: "avail" },
-//       { name: "Wheat Flour", sub: "Maida & Atta", grade: "standard", hs: "1101.00", status: "avail" },
-//       { name: "Sugar", sub: "Refined White Sugar", grade: "standard", hs: "1701.99", status: "limited" }
-//     ]
-//   },
-//   spices: {
-//     label: "Spices",
-//     icon: "fa-pepper-hot",
-//     items: [
-//       { name: "Turmeric Powder", sub: "Pure Haldi", grade: "premium", hs: "0910.30", status: "avail" },
-//       { name: "Red Chili Powder", sub: "Kashmiri Lal Mirch", grade: "premium", hs: "0904.21", status: "avail" },
-//       { name: "Cumin Seeds", sub: "Jeera Whole", grade: "standard", hs: "0909.31", status: "avail" }
-//     ]
-//   },
-//   food: {
-//     label: "Food & Beverages",
-//     icon: "fa-utensils",
-//     items: [
-//       { name: "Ready to Eat Curry", sub: "Various Flavors", grade: "standard", hs: "2104.20", status: "avail" },
-//       { name: "Pickles", sub: "Mixed Vegetable", grade: "standard", hs: "2001.90", status: "limited" },
-//       { name: "Snacks", sub: "Namkeen Mix", grade: "standard", hs: "1905.90", status: "avail" }
-//     ]
-//   },
-//   textiles: {
-//     label: "Textiles",
-//     icon: "fa-tshirt",
-//     items: [
-//       { name: "Cotton Fabric", sub: "100% Pure Cotton", grade: "premium", hs: "5208.32", status: "avail" },
-//       { name: "Silk Sarees", sub: "Traditional Design", grade: "premium", hs: "5007.20", status: "limited" }
-//     ]
-//   },
-//   chemicals: {
-//     label: "Chemicals",
-//     icon: "fa-flask",
-//     items: [
-//       { name: "Organic Fertilizer", sub: "NPK 20-20-20", grade: "standard", hs: "3105.90", status: "avail" },
-//       { name: "Industrial Solvents", sub: "High Purity", grade: "select", hs: "3814.00", status: "limited" }
-//     ]
-//   },
-//   machinery: {
-//     label: "Machinery",
-//     icon: "fa-cogs",
-//     items: [
-//       { name: "Agricultural Equipment", sub: "Modern Tools", grade: "premium", hs: "8432.80", status: "avail" },
-//       { name: "Food Processing Units", sub: "Stainless Steel", grade: "premium", hs: "8438.50", status: "limited" }
-//     ]
-//   },
-//   metals: {
-//     label: "Metals",
-//     icon: "fa-industry",
-//     items: [
-//       { name: "Steel Pipes", sub: "MS & GI Pipes", grade: "standard", hs: "7306.30", status: "avail" },
-//       { name: "Aluminum Sheets", sub: "Industrial Grade", grade: "standard", hs: "7606.12", status: "avail" }
-//     ]
-//   },
-//   plastics: {
-//     label: "Plastics",
-//     icon: "fa-cube",
-//     items: [
-//       { name: "HDPE Granules", sub: "Raw Material", grade: "standard", hs: "3901.20", status: "avail" },
-//       { name: "Plastic Packaging", sub: "Food Grade", grade: "premium", hs: "3923.30", status: "limited" }
-//     ]
-//   },
-//   electronics: {
-//     label: "Electronics",
-//     icon: "fa-microchip",
-//     items: [
-//       { name: "LED Lights", sub: "Energy Efficient", grade: "standard", hs: "8539.50", status: "avail" },
-//       { name: "Wiring Harness", sub: "Automotive Grade", grade: "premium", hs: "8544.42", status: "limited" }
-//     ]
-//   },
-//   auto: {
-//     label: "Auto Parts",
-//     icon: "fa-car",
-//     items: [
-//       { name: "Brake Pads", sub: "Ceramic Compound", grade: "premium", hs: "8708.30", status: "avail" },
-//       { name: "Oil Filters", sub: "High Efficiency", grade: "standard", hs: "8421.23", status: "avail" }
-//     ]
-//   },
-//   ceramic: {
-//     label: "Ceramics",
-//     icon: "fa-tile",
-//     items: [
-//       { name: "Porcelain Tiles", sub: "Floor & Wall", grade: "premium", hs: "6907.90", status: "avail" },
-//       { name: "Ceramic Insulators", sub: "Electrical Grade", grade: "select", hs: "8546.20", status: "limited" }
-//     ]
-//   },
-//   leather: {
-//     label: "Leather",
-//     icon: "fa-shoe-prints",
-//     items: [
-//       { name: "Genuine Leather", sub: "Full Grain", grade: "premium", hs: "4107.12", status: "avail" },
-//       { name: "Leather Bags", sub: "Handcrafted", grade: "premium", hs: "4202.21", status: "limited" }
-//     ]
-//   },
-//   gems: {
-//     label: "Gems & Jewelry",
-//     icon: "fa-gem",
-//     items: [
-//       { name: "Gold Jewelry", sub: "22K Gold", grade: "premium", hs: "7113.19", status: "limited" },
-//       { name: "Silver Ornaments", sub: "Sterling Silver", grade: "premium", hs: "7113.11", status: "avail" }
-//     ]
-//   },
-//   paper: {
-//     label: "Paper & Wood",
-//     icon: "fa-tree",
-//     items: [
-//       { name: "Printing Paper", sub: "A4 Quality", grade: "standard", hs: "4802.55", status: "avail" },
-//       { name: "Plywood Sheets", sub: "Marine Grade", grade: "premium", hs: "4412.31", status: "limited" }
-//     ]
-//   }
-// };
-
-/* ══════════════════════════════════════════
    HERO BACKGROUND SLIDER
 ══════════════════════════════════════════ */
 function initHeroSlider() {
@@ -135,24 +14,13 @@ function initHeroSlider() {
   const prevBtn = document.getElementById('heroPrev');
   const nextBtn = document.getElementById('heroNext');
   
-  console.log('initHeroSlider called');
-  console.log('Slides found:', slides.length);
-  console.log('Dots found:', dots.length);
-  console.log('Progress bar:', bar);
-  console.log('Prev button:', prevBtn);
-  console.log('Next button:', nextBtn);
-  
-  if (!slides.length) {
-    console.error('No hero slides found!');
-    return;
-  }
+  if (!slides.length) return;
 
   let current = 0;
   let timer   = null;
   const DELAY = 5000;
 
   function goTo(idx) {
-    console.log('Going to slide:', idx);
     slides[current].classList.remove('active');
     if (dots[current]) dots[current].classList.remove('active');
     current = (idx + slides.length) % slides.length;
@@ -175,47 +43,24 @@ function initHeroSlider() {
 
   function startAuto() {
     clearInterval(timer);
-    console.log('Starting auto-slide with DELAY:', DELAY);
-    timer = setInterval(() => {
-      console.log('Auto-sliding to next');
-      goTo(current + 1);
-    }, DELAY);
+    timer = setInterval(() => goTo(current + 1), DELAY);
   }
 
   function stopAuto() {
     clearInterval(timer);
-    console.log('Auto-slide stopped');
     if (bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
   }
 
-  // Initialize dots click handlers
   dots.forEach(dot => {
     dot.addEventListener('click', () => {
-      console.log('Dot clicked:', dot.dataset.index);
       stopAuto();
       goTo(parseInt(dot.dataset.index));
       startAuto();
     });
   });
 
-  // Initialize nav buttons
-  if (prevBtn) {
-    prevBtn.addEventListener('click', () => { 
-      console.log('Prev button clicked');
-      stopAuto(); 
-      goTo(current - 1); 
-      startAuto(); 
-    });
-  }
-  
-  if (nextBtn) {
-    nextBtn.addEventListener('click', () => { 
-      console.log('Next button clicked');
-      stopAuto(); 
-      goTo(current + 1); 
-      startAuto(); 
-    });
-  }
+  if (prevBtn) prevBtn.addEventListener('click', () => { stopAuto(); goTo(current - 1); startAuto(); });
+  if (nextBtn) nextBtn.addEventListener('click', () => { stopAuto(); goTo(current + 1); startAuto(); });
 
   const section = document.querySelector('.hero-section');
   if (section) {
@@ -229,11 +74,8 @@ function initHeroSlider() {
     }, { passive: true });
   }
 
-  // Force start
-  console.log('Forcing slider start...');
   resetBar();
   startAuto();
-  console.log('Hero slider initialized successfully');
 }
 
 /* ══════════════════════════════════════════
@@ -375,70 +217,171 @@ function initWhySlider() {
 }
 
 /* ══════════════════════════════════════════
-   MEGA MENU — Cross Browser Compatible
+   MEGA MENU — Cross-Browser, All Fixes
+   
+   Fixes:
+   1. Dynamic top position — reads navbar bottom on every open
+      so scroll never causes a gap (Firefox + all browsers)
+   2. Hover bridge — invisible element covers gap between
+      nav link and menu so cursor can travel without closing
+   3. Sibling close — hovering other nav items closes menu
+   4. Mobile — JS toggle via .mobile-open class
 ══════════════════════════════════════════ */
 function initMegaMenu() {
+  const navbar       = document.getElementById('mainNav');
   const megaDropdown = document.querySelector('.mega-dropdown');
-  const megaToggle = document.getElementById('productsMenu');
-  const megaMenu = document.querySelector('.mega-menu');
-  
-  if (!megaDropdown || !megaMenu) return;
+  const megaToggle   = document.getElementById('productsMenu');
+  const megaMenu     = document.querySelector('.mega-menu');
 
-  let hoverTimeout;
-  const delay = 150; // Small delay to prevent flickering
+  if (!megaDropdown || !megaMenu || !navbar) return;
 
-  // Show menu function
-  const showMenu = () => {
-    clearTimeout(hoverTimeout);
+  /* ── Utility ── */
+  function isMobile() {
+    return window.innerWidth < 992;
+  }
+
+  /* ── Get exact navbar bottom, accounting for scroll & any size change ── */
+  function getNavbarBottom() {
+    return navbar.getBoundingClientRect().bottom;
+  }
+
+  /* ── Position the menu correctly (call every time before showing) ──
+     setProperty with 'important' overrides any CSS !important rules     */
+  function positionMenu() {
+    const bottom = getNavbarBottom();
+    megaMenu.style.setProperty('top', bottom + 'px', 'important');
+  }
+
+  /* ══════════════════════════════
+     DESKTOP: Hover-based logic
+  ══════════════════════════════ */
+  let closeTimer = null;
+  const CLOSE_DELAY = 80; // ms — enough to cross the gap
+
+  function openMenu() {
+    if (isMobile()) return;
+    clearTimeout(closeTimer);
+    positionMenu();   // always recalculate before showing
     megaMenu.classList.add('is-open');
-  };
+  }
 
-  // Hide menu function
-  const hideMenu = () => {
-    hoverTimeout = setTimeout(() => {
+  function scheduleClose() {
+    if (isMobile()) return;
+    clearTimeout(closeTimer);
+    closeTimer = setTimeout(() => {
       megaMenu.classList.remove('is-open');
-    }, delay);
-  };
+    }, CLOSE_DELAY);
+  }
 
-  // Hover on dropdown (Products link)
-  megaDropdown.addEventListener('mouseenter', showMenu);
-  megaDropdown.addEventListener('mouseleave', hideMenu);
+  function cancelClose() {
+    clearTimeout(closeTimer);
+  }
 
-  // Hover on menu itself (keep it open)
-  megaMenu.addEventListener('mouseenter', () => clearTimeout(hoverTimeout));
-  megaMenu.addEventListener('mouseleave', hideMenu);
+  /* Hover on the dropdown nav item */
+  megaDropdown.addEventListener('mouseenter', openMenu);
+  megaDropdown.addEventListener('mouseleave', scheduleClose);
 
-  // Click toggle for mobile/tablet
+  /* Hover on the menu itself keeps it open */
+  megaMenu.addEventListener('mouseenter', cancelClose);
+  megaMenu.addEventListener('mouseleave', scheduleClose);
+
+  /* Hovering any OTHER nav item closes the menu immediately */
+  document.querySelectorAll('.navbar-nav .nav-item:not(.mega-dropdown)').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      if (!isMobile()) {
+        clearTimeout(closeTimer);
+        megaMenu.classList.remove('is-open');
+      }
+    });
+  });
+
+  /* Close on Escape */
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      megaMenu.classList.remove('is-open');
+      closeMobileMenu();
+    }
+  });
+
+  /* Close when clicking outside (desktop fallback) */
+  document.addEventListener('click', e => {
+    if (!megaDropdown.contains(e.target) && !megaMenu.contains(e.target)) {
+      megaMenu.classList.remove('is-open');
+    }
+  });
+
+  /* On scroll — reposition if open so it never drifts */
+  window.addEventListener('scroll', () => {
+    if (!isMobile() && megaMenu.classList.contains('is-open')) {
+      positionMenu();
+    }
+  }, { passive: true });
+
+  /* On resize — reposition */
+  window.addEventListener('resize', () => {
+    if (!isMobile()) {
+      positionMenu();
+    }
+  }, { passive: true });
+
+  /* ══════════════════════════════
+     MOBILE: Click toggle logic
+  ══════════════════════════════ */
+  function openMobileMenu() {
+    megaMenu.classList.add('mobile-open');
+    megaMenu.style.display    = 'block';
+    megaMenu.style.maxHeight  = '70vh';
+    megaMenu.style.overflowY  = 'auto';
+    if (megaToggle) megaToggle.classList.add('active');
+  }
+
+  function closeMobileMenu() {
+    megaMenu.classList.remove('mobile-open');
+    megaMenu.style.display   = '';
+    megaMenu.style.maxHeight = '';
+    if (megaToggle) megaToggle.classList.remove('active');
+  }
+
   if (megaToggle) {
-    megaToggle.addEventListener('click', (e) => {
+    megaToggle.addEventListener('click', e => {
+      if (!isMobile()) return;
       e.preventDefault();
       e.stopPropagation();
-      megaMenu.classList.toggle('is-open');
+      megaMenu.classList.contains('mobile-open') ? closeMobileMenu() : openMobileMenu();
     });
   }
 
-  // Close menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!megaDropdown.contains(e.target)) {
-      megaMenu.classList.remove('is-open');
+  /* Mobile: close when a product link is clicked */
+  megaMenu.querySelectorAll('.mega-item').forEach(item => {
+    item.addEventListener('click', () => {
+      if (isMobile()) {
+        closeMobileMenu();
+        const navCollapse = document.getElementById('navMenu');
+        if (navCollapse && navCollapse.classList.contains('show')) {
+          const bsCollapse = bootstrap.Collapse.getInstance(navCollapse);
+          if (bsCollapse) bsCollapse.hide();
+        }
+      }
+    });
+  });
+
+  /* Mobile: close on outside click */
+  document.addEventListener('click', e => {
+    if (isMobile() && !megaDropdown.contains(e.target)) {
+      closeMobileMenu();
     }
   });
 
-  // Close on escape key
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      megaMenu.classList.remove('is-open');
+  /* Reset on resize desktop ↔ mobile */
+  window.addEventListener('resize', () => {
+    if (!isMobile()) {
+      closeMobileMenu();
+      megaMenu.classList.remove('mobile-open');
     }
-  });
-
-  // Close menu when page scrolls (Firefox fix)
-  let scrollTimeout;
-  window.addEventListener('scroll', () => {
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(() => {
-      megaMenu.classList.remove('is-open');
-    }, 50);
   }, { passive: true });
+
+  /* Run initial position calculation */
+  positionMenu();
 }
 
 /* ══════════════════════════════════════════
@@ -564,7 +507,6 @@ function initNavbar() {
 ══════════════════════════════════════════ */
 function initScrollSpy() {
   const sections = document.querySelectorAll('section[id]');
-  // Only target nav links with hash hrefs (not page links)
   const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
   if (!sections.length || !navLinks.length) return;
 
@@ -597,7 +539,6 @@ function initBackToTop() {
    TOAST
 ══════════════════════════════════════════ */
 function showToast(msg) {
-  // Try the DOM toast element first
   const t = document.getElementById('toastNotify');
   if (t) {
     t.innerHTML = `<i class="fa fa-check-circle me-2"></i>${msg || 'Done!'}`;
@@ -605,7 +546,6 @@ function showToast(msg) {
     setTimeout(() => t.classList.remove('show'), 3500);
     return;
   }
-  // Fallback: create floating toast
   const existing = document.querySelector(".toast-msg");
   if (existing) existing.remove();
   const toast = document.createElement("div");
@@ -619,26 +559,6 @@ function showToast(msg) {
     setTimeout(() => toast.remove(), 300);
   }, 3000);
 }
-
-/* ══════════════════════════════════════════
-   CONTACT FORM
-══════════════════════════════════════════ */
-// function initContactForm() {
-//   const form = document.getElementById('contactForm');
-//   if (!form) return;
-//   form.addEventListener('submit', e => {
-//     e.preventDefault();
-//     const btn = form.querySelector('button[type="submit"]');
-//     btn.disabled = true;
-//     btn.innerHTML = '<i class="fa fa-spinner fa-spin me-2"></i>Sending...';
-//     setTimeout(() => {
-//       btn.disabled = false;
-//       btn.innerHTML = 'Send Enquiry <i class="fa fa-paper-plane ms-2"></i>';
-//       form.reset();
-//       showToast('Your enquiry has been sent successfully!');
-//     }, 1500);
-//   });
-// }
 
 /* ══════════════════════════════════════════
    PARTICLES
@@ -747,7 +667,6 @@ document.addEventListener('DOMContentLoaded', function () {
   initNavbar();
   initScrollSpy();
   initBackToTop();
-  // initContactForm();
   initSmoothScroll();
   initAnimateOnScroll();
   animateCounters();

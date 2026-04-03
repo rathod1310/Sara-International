@@ -44,11 +44,8 @@ def beans_pulses_lentils(request):
 def our_speciality(request):
     return render(request,'products/our-speciality.html')
 
-def pickles_chutney(request):
-    return render(request,'products/pickles-chutney.html')
-
-def ready_paste(request):
-    return render(request,'products/ready-paste.html')
+def pickles_chutney_ready_paste(request):
+    return render(request,'products/pickles-chutney-ready-paste.html')
 
 def papad_khakhra(request):
     return render(request,'products/papad-khakhra.html')
@@ -62,14 +59,17 @@ def cookies(request):
 def pooja_samagri(request):
     return render(request,'products/pooja-samagri.html')
 
-def agarbatti(request):
-    return render(request,'products/agarbatti.html')
+def agarbatti_dhoop(request):
+    return render(request,'products/agarbatti-dhoop.html')
 
-def dhoop_stick(request):
-    return render(request,'products/dhoop-stick.html')
+# def dhoop_stick(request):
+#     return render(request,'products/dhoop-stick.html')
 
-def makhana_chana_peanuts(request):
-    return render(request,'products/makhana-chana-peanuts.html')
+def chana_peanuts(request):
+    return render(request,'products/chana-peanuts.html')
+
+def namkeen(request):
+    return render(request,'products/namkeen.html')
 
 def mukhavas(request):
     return render(request,'products/mukhavas.html')
@@ -116,8 +116,8 @@ def send_contact_email(request):
             email_msg = EmailMessage(
                 subject,
                 body,
-                'SENDER MAIL',
-                ['RECIVER MAIL'],
+                'Sender Email',
+                ['Reciver Email'],
             )
             email_msg.content_subtype = 'html'  # HTML email
             email_msg.send()
